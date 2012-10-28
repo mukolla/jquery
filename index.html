@@ -3,24 +3,48 @@
 	<head>
 		<title></title>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-		<link type="text/css" rel="stylesheet" href="style.css" />
+		
 		
 		<script src="jquery.min.js"></script>
 		
 	</head>
 	<body>
-		<div class="mousemove-elm">TODO write content</div>
-		
-		<div class="content">
-			Hello
-		</div>
+	
+		<h3>Clic text for write</h3>
 
-		<span class="contentedit">
-			Wordl
-		</span>
-
-		<h1>asd</h1>
+		<ul style="list-style-type: decimal;">
+			<li>
+				<div class="content">text is placed in a DIV tag </div>
+			</li>
+			<li>
+				<span class="contentedit">text is placed in a SPAN tag</span>
+			</li>
+			<li>
+				<h4>text is placed in a H4 tag</h4>
+			</li>
+		</ul>
 		 
 		 <script src="contentEdit.js"></script>
+
+		 <script>
+		 	$('.contentedit').contentEdit({'option_data':'span'});
+
+			$('.content').contentEdit({'option_data':'div'});
+
+			$('h4').contentEdit();
+		 </script>
+
+	<hr/>
+	<p>Use the <b>"option_data"</b> to transfer to each individual parameters of each element <br /></p>
+	<hr/>
+
+	<pre>
+ 	$('.contentedit').contentEdit({'option_data':'span'});
+
+	$('.content').contentEdit({'option_data':'div'});
+
+	$('h1').contentEdit();
+	</pre>
+
 	</body>
 </html>

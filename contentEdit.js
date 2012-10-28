@@ -1,13 +1,13 @@
 (function($) {
 	
-	var defaults = { tag:'div' };
+	var defaults = { option_data:'my options' };
 	var options;
 
 	$.fn.contentEdit = function(params){
 		
-
-		options = $.extend({}, defaults, options, params);
-	$(this).data('tag', options.tag);
+	options = $.extend({}, defaults, options, params);
+	
+	$(this).data('option_data', options.option_data);
 
 	$(this).on('click',function() {
 		if ( !$(this).find('textarea').length ){
@@ -17,7 +17,7 @@
 
 	$(this).on('click', '.frm-submt', function(e) {
 		
-		console.log($(this).parent().data('tag'));
+		console.log($(this).parent().data('option_data'));
 
 		$(this).closest($(this).parent()).text( $(this).closest($(this).parent()).find('textarea').attr('value') );
 			return false;
@@ -27,11 +27,3 @@
 	};
 
 })(jQuery);
-
-
-
-$('.contentedit').contentEdit({'tag':'span'});
-
-$('.content').contentEdit({'tag':'div'});
-
-$('h1').contentEdit();
